@@ -1,5 +1,4 @@
 from elasticsearch import Elasticsearch
-
 import urllib.request as ul
 import json
 import time
@@ -9,8 +8,7 @@ key = "d5ff14e5fa712e12dba02b7b8146f38e"
 
 
 class ElaAPI:
-    es = Elasticsearch(hosts="127.0.0.1", port=9200)
-
+    es= Elasticsearch()
     # es.indices.delete(index='index-test', ignore=[400, 404])
 
     @classmethod
@@ -31,18 +29,18 @@ class ElaAPI:
             result = json.loads(responseData)
 
             print(result)
-            for i in range(0,10):
-                doc = {"moiveNm": result["movieListResult"]["movieList"][i]["movieNm"],
-                       "genreAlt": result["movieListResult"]["movieList"][i]["genreAlt"],
-                       "prdtYear": result["movieListResult"]["movieList"][i]["prdtYear"],
-                       "prdStat": result["movieListResult"]["movieList"][i]["prdtStatNm"]
-                       }
-
-                time.sleep(1)
-                res=cls.es.index(index="index-test",doc_type='movie',id=(j-1)*10+i,body=doc)
-                cls.es.indices.refresh(index="index-test")
-                # res = es.get(index="index-test", doc_type='movie', id=1)
-                # print(res['_source'])
+            # for i in range(0,10):
+            #     doc = {"moiveNm": result["movieListResult"]["movieList"][i]["movieNm"],
+            #            "genreAlt": result["movieListResult"]["movieList"][i]["genreAlt"],
+            #            "prdtYear": result["movieListResult"]["movieList"][i]["prdtYear"],
+            #            "prdStat": result["movieListResult"]["movieList"][i]["prdtStatNm"]
+            #            }
+            #
+            #     time.sleep(1)
+            #     res=cls.es.index(index="index-test",doc_type='movie',id=(j-1)*10+i,body=doc)
+            #     cls.es.indices.refresh(index="index-test")
+            #     # res = es.get(index="index-test", doc_type='movie', id=1)
+            #     # print(res['_source'])
 
     @classmethod
     def allIndex(cls):
@@ -79,8 +77,8 @@ class ElaAPI:
                 writer.writerow(document)
 
 
-# ElaAPI.allIndex()
+ElaAPI.allIndex()
 # ElaAPI.insertIndex()
-ElaAPI.alldata()
+#ElaAPI.alldata()
 # ElaAPI.transcsv()
 
