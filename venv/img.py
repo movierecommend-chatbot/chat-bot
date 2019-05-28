@@ -23,8 +23,6 @@ def imgLink(cname):
 
     url3 = 'https://movie.naver.com' + realLink
 
-
-
     req3 = Request(url3)
     page3 = urlopen(req3)
     html3 = page3.read()
@@ -36,4 +34,3 @@ def imgLink(cname):
     print(img_src)
 
     return (img_src)
-

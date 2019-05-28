@@ -6,9 +6,8 @@ from pylab import *
 from numpy import array,sin,pi
 import random
 
-import mvdata
 import img
-
+import weather
 # function for responses
 def bio(dates):
 
@@ -77,6 +76,6 @@ def recommend(date):
     else:
         movie_type = 'etc'
 
-    rec_mv=mvdata.getMvdata(movie_type)
+    rec_mv=weather.getMvdata(movie_type)
 
     return (rec_mv+', 이 영화 괜찮아?')

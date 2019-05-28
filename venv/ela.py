@@ -15,7 +15,7 @@ class ElaAPI:
     def insertIndex(cls):
 
 
-        for j in range(69,100):
+        for j in range(180,200):
             url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=" + key + "&curPage=" + str(
                 j)
             request = ul.Request(url)
@@ -29,18 +29,18 @@ class ElaAPI:
             result = json.loads(responseData)
 
             print(result)
-            # for i in range(0,10):
-            #     doc = {"moiveNm": result["movieListResult"]["movieList"][i]["movieNm"],
-            #            "genreAlt": result["movieListResult"]["movieList"][i]["genreAlt"],
-            #            "prdtYear": result["movieListResult"]["movieList"][i]["prdtYear"],
-            #            "prdStat": result["movieListResult"]["movieList"][i]["prdtStatNm"]
-            #            }
-            #
-            #     time.sleep(1)
-            #     res=cls.es.index(index="index-test",doc_type='movie',id=(j-1)*10+i,body=doc)
-            #     cls.es.indices.refresh(index="index-test")
-            #     # res = es.get(index="index-test", doc_type='movie', id=1)
-            #     # print(res['_source'])
+            for i in range(0,10):
+                doc = {"moiveNm": result["movieListResult"]["movieList"][i]["movieNm"],
+                       "genreAlt": result["movieListResult"]["movieList"][i]["genreAlt"],
+                       "prdtYear": result["movieListResult"]["movieList"][i]["prdtYear"],
+                       "prdStat": result["movieListResult"]["movieList"][i]["prdtStatNm"],
+                       }
+
+                time.sleep(1)
+                res=cls.es.index(index="index-test",doc_type='movie',id=(j-1)*10+i,body=doc)
+                cls.es.indices.refresh(index="index-test")
+                # res = es.get(index="index-test", doc_type='movie', id=1)
+                # print(res['_source'])
 
     @classmethod
     def allIndex(cls):
@@ -54,31 +54,12 @@ class ElaAPI:
             res=cls.es.get(index="index-test", doc_type="movie",id=i)
             print(res['_source'])
 
-    @classmethod
-    def transcsv(cls):
-        data = cls.es.search(
-            index="index-test",
-            size=10000,
-            body={
-                "query": {
-                    "match_all": {
-                    }
-                }
-            }
-        )
-
-        csv_columns=['moiveNm','genreAlt','prdtYear','prdStat']
-        csv_file='C:/Users/anyin/OneDrive/바탕 화면/movie.csv'
-
-        with open(csv_file, 'w') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
-            writer.writeheader()
-            for document in [x['_source'] for x in data['hits']['hits']]:
-                writer.writerow(document)
 
 
-ElaAPI.allIndex()
-# ElaAPI.insertIndex()
+
+
+
+# ElaAPI.allIndex()
+ElaAPI.insertIndex()
 #ElaAPI.alldata()
 # ElaAPI.transcsv()
-
