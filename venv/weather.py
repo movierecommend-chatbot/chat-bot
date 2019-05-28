@@ -177,7 +177,11 @@ def MovieStory(cname):
 
     cs = soup2.find_all('p', attrs={'class': 'result_thumb'})
 
-    link = cs[0].find('a')['href']
+    try:
+        link = cs[0].find('a')['href']
+    except:
+        print('영화정보 없음')
+        return ('영화정보 없음')
 
     realLink = urllib.parse.quote(link)
 
@@ -188,7 +192,11 @@ def MovieStory(cname):
     html3 = page3.read()
     soup3 = bs4.BeautifulSoup(html3, 'lxml')
 
-    movie_story = '- 줄거리 : ' + soup3.find('div', class_='story_area').find('p', class_='con_tx').text
+    try:
+        movie_story = '- 줄거리 : ' + soup3.find('div', class_='story_area').find('p', class_='con_tx').text
+    except:
+        print('줄거리 없음')
+        return ('내용 없음')
 
     return (movie_story)
 
@@ -202,7 +210,11 @@ def MovieRating(cname):
     html2 = page2.read()
     soup2 = bs4.BeautifulSoup(html2, 'lxml')
 
-    movie_score = soup2.find('ul', class_='search_list_1').find('em', class_='num').text
+    try:
+        movie_score = soup2.find('ul', class_='search_list_1').find('em', class_='num').text
+    except:
+        print('평점 없음')
+        return ('내용 없음')
     movie_score_return = '- 평점 : ' + repr(movie_score) + '점'
 
     return (movie_score_return)
@@ -219,7 +231,11 @@ def MovieActor(cname):
 
     cs = soup2.find_all('p', attrs={'class': 'result_thumb'})
 
-    link = cs[0].find('a')['href']
+    try:
+        link = cs[0].find('a')['href']
+    except:
+        print('영화정보 없음')
+        return ('영화정보 없음')
 
     realLink = urllib.parse.quote(link)
 
@@ -230,9 +246,16 @@ def MovieActor(cname):
     html3 = page3.read()
     soup3 = bs4.BeautifulSoup(html3, 'lxml')
 
-    movie_actor_list = soup3.find_all('div', attrs={'class': 'people'})
+
+    try:
+        movie_actor_list = soup3.find_all('div', attrs={'class': 'people'})
+    except:
+        print('감독/배우 없음')
+        return ('내용 없음')
+
     movie_count = len(movie_actor_list)
     print(movie_count)
+
     for i in range(0, movie_count):
         movie_actor = movie_actor_list[i].find('a')['title']
         movie_actors = '- 배우/감독 : ' + movie_actor
