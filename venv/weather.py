@@ -153,7 +153,7 @@ def getMvdata(type):
     print(mvs)
 
     mvdata = '- 영화제목: ' + str(mvs['movieNm']) + ' 장르: ' + str(mvs['genreAlt']) + ' 개봉상태: ' + str(
-        mvs['prdtStatNm']) + ' 국가: ' + str(mvs['nationAlt']) + ' 개봉년도: ' + str(mvs['prdtYear'])
+        mvs['prdtStatNm'])  + ' 개봉년도: ' + str(mvs['prdtYear'])
 
     mvlink = img.imgLink(mvs['movieNm'])
     global movieName
@@ -181,7 +181,7 @@ def MovieStory(cname):
         link = cs[0].find('a')['href']
     except:
         print('영화정보 없음')
-        return ('영화정보 없음')
+        return ('정보를 제공하지 않는 영화예요.')
 
     realLink = urllib.parse.quote(link)
 
@@ -196,7 +196,7 @@ def MovieStory(cname):
         movie_story = '- 줄거리 : ' + soup3.find('div', class_='story_area').find('p', class_='con_tx').text
     except:
         print('줄거리 없음')
-        return ('내용 없음')
+        return ('줄거리를 제공하지 않는 영화예요.')
 
     return (movie_story)
 
@@ -214,7 +214,7 @@ def MovieRating(cname):
         movie_score = soup2.find('ul', class_='search_list_1').find('em', class_='num').text
     except:
         print('평점 없음')
-        return ('내용 없음')
+        return ('평점를 제공하지 않는 영화예요.')
     movie_score_return = '- 평점 : ' + repr(movie_score) + '점'
 
     return (movie_score_return)
@@ -235,7 +235,7 @@ def MovieActor(cname):
         link = cs[0].find('a')['href']
     except:
         print('영화정보 없음')
-        return ('영화정보 없음')
+        return ('정보를 제공하지 않는 영화예요.')
 
     realLink = urllib.parse.quote(link)
 
@@ -251,7 +251,7 @@ def MovieActor(cname):
         movie_actor_list = soup3.find_all('div', attrs={'class': 'people'})
     except:
         print('감독/배우 없음')
-        return ('내용 없음')
+        return ('감독/배우를 제공하지 않는 영화예요.')
 
     movie_count = len(movie_actor_list)
     print(movie_count)

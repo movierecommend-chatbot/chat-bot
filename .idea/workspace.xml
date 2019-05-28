@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="418a11e5-6763-4947-b71d-a5da010e7768" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/weather.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,18 +37,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/img.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
@@ -76,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/weather.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4811">
-              <caret line="256" column="22" lean-forward="true" selection-start-line="256" selection-start-column="22" selection-end-line="256" selection-end-column="22" />
+            <state relative-caret-position="133">
+              <caret line="258" column="35" lean-forward="true" selection-start-line="258" selection-start-column="35" selection-end-line="258" selection-end-column="35" />
               <folding>
                 <element signature="e#0#80#0" expanded="true" />
               </folding>
@@ -358,12 +345,12 @@
       <workItem from="1558342931554" duration="25176000" />
       <workItem from="1558514698078" duration="11410000" />
       <workItem from="1558671120045" duration="12964000" />
-      <workItem from="1558928862491" duration="15643000" />
+      <workItem from="1558928862491" duration="16745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118628000" />
+    <option name="totallyTimeSpent" value="119730000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -383,7 +370,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8188105" visible="true" weight="0.33094555" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8188105" weight="0.33094555" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -391,7 +378,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.18508287" side_tool="true" weight="0.32188842" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.81491715" weight="0.32378224" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.81491715" visible="true" weight="0.32378224" />
       <window_info anchor="bottom" id="TODO" order="11" sideWeight="0.49723756" weight="0.32857144" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4986226" weight="0.32664755" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -545,8 +532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/weather.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4811">
-          <caret line="256" column="22" lean-forward="true" selection-start-line="256" selection-start-column="22" selection-end-line="256" selection-end-column="22" />
+        <state relative-caret-position="133">
+          <caret line="258" column="35" lean-forward="true" selection-start-line="258" selection-start-column="35" selection-end-line="258" selection-end-column="35" />
           <folding>
             <element signature="e#0#80#0" expanded="true" />
           </folding>
